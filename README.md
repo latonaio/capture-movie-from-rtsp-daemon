@@ -40,22 +40,4 @@ project.ymlへの記載例
       NEXT_DEVICE:  ###
 ```
 ## Flowchart
-```flow
-開始=>start: Start
-終了=>end: End
-
-分岐1(align-next=no)=>condition: カンバン内のタイプがprestartか？
-分岐2(align-next=no)=>condition: カンバン内のタイプがstartか？
-分岐3(align-next=no)=>condition: カンバン内のタイプがendか？
-
-処理1=>operation: カンバンを取得
-処理2=>operation: 既存の動画変換を終了し、動画変換を開始
-処理3=>operation: 動画変換を終了
-処理4=>operation: 開始時間、終了時間、動画ファイル名を含んだカンバンを出力
-処理5=>operation: 何もしない
-
-開始->処理1->分岐1(yes)->処理2
-開始->分岐1(no, bottom)->分岐2(yes)->処理5
-開始->分岐1(no, bottom)->分岐2(no, bottom)->分岐3(yes)->処理3->処理4->終了
-```
 ![フローチャート図](https://bitbucket.org/latonaio/capture-movie-from-rtsp-daemon/raw/8fa8b38f6257bbf8afb8855a52837bb8f50951c2/doc/capture-movie-from-rtsp-daemon-flowchart.png)
